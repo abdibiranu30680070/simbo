@@ -56,22 +56,24 @@ export default function Appointment() {
   };
 
   return (
-    <section className="bg-gradient-to-br from-[#0B5394] to-[#0B7AD1] py-16 px-4 sm:px-6 lg:px-8">
+    <section
+      id="appointment"
+      className="bg-gradient-to-br from-[#0B5394] to-[#0B7AD1] py-16 px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-20"
+    >
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-
-          {/* Info Panel */}
-          <div className="space-y-8">
-            <div className="border-2 border-white rounded-3xl p-8 text-white">
-              <h2 className="text-3xl font-bold mb-2 leading-tight">
-                We Always Take Care Of
-                <br />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-16 items-center">
+          
+          {/* Left - Info Panel */}
+          <div className="space-y-8 text-white">
+            <div className="border-2 border-white rounded-3xl p-6 sm:p-8 text-center sm:text-left">
+              <h2 className="text-2xl sm:text-3xl xl:text-4xl font-bold mb-4 leading-snug">
+                We Always Take Care Of <br />
                 Your Smile & Self Confident
               </h2>
 
               <div className="mt-8 space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-cyan-400 rounded-full flex-shrink-0">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start sm:gap-4">
+                  <div className="flex items-center justify-center w-12 h-12 bg-cyan-400 rounded-full flex-shrink-0 mb-3 sm:mb-0">
                     <Phone size={24} className="text-white" />
                   </div>
                   <div>
@@ -80,8 +82,8 @@ export default function Appointment() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-cyan-400 rounded-full flex-shrink-0">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start sm:gap-4">
+                  <div className="flex items-center justify-center w-12 h-12 bg-cyan-400 rounded-full flex-shrink-0 mb-3 sm:mb-0">
                     <Clock size={24} className="text-white" />
                   </div>
                   <div>
@@ -93,9 +95,9 @@ export default function Appointment() {
             </div>
           </div>
 
-          {/* Appointment Form */}
-          <div className="bg-white rounded-3xl p-8 shadow-2xl">
-            <h2 className="text-3xl font-bold text-[#002B5B] mb-2">
+          {/* Right - Form */}
+          <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl">
+            <h2 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-[#002B5B] mb-2">
               Book an Appointment
             </h2>
             <p className="text-gray-600 mb-6">
@@ -103,26 +105,27 @@ export default function Appointment() {
             </p>
 
             {error && (
-              <div className="bg-red-50 border-2 border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4">
+              <div className="bg-red-50 border-2 border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm sm:text-base">
                 {error}
               </div>
             )}
 
             {success && (
-              <div className="bg-green-50 border-2 border-green-200 text-green-700 px-4 py-3 rounded-lg mb-4">
+              <div className="bg-green-50 border-2 border-green-200 text-green-700 px-4 py-3 rounded-lg mb-4 text-sm sm:text-base">
                 Appointment submitted successfully! We'll contact you soon.
               </div>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid sm:grid-cols-3 gap-4">
+              {/* Top Inputs */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
                 <input
                   type="text"
                   name="name"
                   placeholder="Enter Your Name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0B7AD1] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0B7AD1]"
                   required
                 />
                 <input
@@ -131,7 +134,7 @@ export default function Appointment() {
                   placeholder="E-mail"
                   value={formData.email}
                   onChange={handleChange}
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0B7AD1] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0B7AD1]"
                   required
                 />
                 <input
@@ -140,17 +143,18 @@ export default function Appointment() {
                   placeholder="Phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0B7AD1] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0B7AD1]"
                   required
                 />
               </div>
 
-              <div className="grid sm:grid-cols-3 gap-4">
+              {/* Lower Inputs */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
                 <select
                   name="department"
                   value={formData.department}
                   onChange={handleChange}
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0B7AD1] focus:border-transparent text-gray-700"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#0B7AD1]"
                   required
                 >
                   <option value="">Select Department</option>
@@ -160,35 +164,34 @@ export default function Appointment() {
                   <option value="endodontics">Endodontics</option>
                   <option value="periodontics">Periodontics</option>
                 </select>
+
                 <input
                   type="date"
                   name="date"
                   value={formData.date}
                   onChange={handleChange}
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0B7AD1] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0B7AD1]"
                   required
                   min={new Date().toISOString().split('T')[0]}
                 />
+
                 <select
                   name="time"
                   value={formData.time}
                   onChange={handleChange}
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0B7AD1] focus:border-transparent text-gray-700"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#0B7AD1]"
                   required
                 >
                   <option value="">Select Time</option>
-                  <option value="09:00">09:00 AM</option>
-                  <option value="10:00">10:00 AM</option>
-                  <option value="11:00">11:00 AM</option>
-                  <option value="12:00">12:00 PM</option>
-                  <option value="13:00">01:00 PM</option>
-                  <option value="14:00">02:00 PM</option>
-                  <option value="15:00">03:00 PM</option>
-                  <option value="16:00">04:00 PM</option>
-                  <option value="17:00">05:00 PM</option>
-                  <option value="18:00">06:00 PM</option>
-                  <option value="19:00">07:00 PM</option>
-                  <option value="20:00">08:00 PM</option>
+                  {[
+                    '09:00', '10:00', '11:00', '12:00',
+                    '13:00', '14:00', '15:00', '16:00',
+                    '17:00', '18:00', '19:00', '20:00'
+                  ].map((time) => (
+                    <option key={time} value={time}>
+                      {time.slice(0, 2)}:{time.slice(3)} {parseInt(time) < 12 ? 'AM' : 'PM'}
+                    </option>
+                  ))}
                 </select>
               </div>
 

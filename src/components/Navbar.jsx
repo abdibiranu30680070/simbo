@@ -1,3 +1,4 @@
+// src/components/Navbar.jsx
 import { useState } from 'react';
 import { Menu, X, Phone, Search, ShoppingCart } from 'lucide-react';
 
@@ -24,7 +25,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo Section */}
+          {/* Logo */}
           <div className="flex items-center space-x-2">
             <svg
               width="40"
@@ -48,7 +49,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Desktop Nav Links */}
+          {/* Desktop Links */}
           <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <button
@@ -77,9 +78,7 @@ export default function Navbar() {
             </button>
             <div className="text-right">
               <div className="text-xs text-[#0B7AD1]">Hotline Number:</div>
-              <div className="text-sm font-bold text-gray-900">
-                +123-7767-8989
-              </div>
+              <div className="text-sm font-bold text-gray-900">+123-7767-8989</div>
             </div>
           </div>
 
@@ -108,9 +107,7 @@ export default function Navbar() {
             ))}
             <div className="pt-4 border-t border-gray-200">
               <div className="text-xs text-[#0B7AD1]">Hotline Number:</div>
-              <div className="text-sm font-bold text-gray-900">
-                +123-7767-8989
-              </div>
+              <div className="text-sm font-bold text-gray-900">+123-7767-8989</div>
             </div>
           </div>
         </div>
