@@ -63,7 +63,7 @@ export default function AboutUs() {
                           textAnchor="middle"
                           dominantBaseline="middle"
                         >
-                          •SIMBO DENTAL CLINIC•
+                          •SIMBO DENTAL CLINIC•  •SIMBO DENTAL CLINIC•
                         </textPath>
                       </text>
                     </svg>

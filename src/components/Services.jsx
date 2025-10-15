@@ -4,7 +4,7 @@ export default function Services() {
   return (
     <>
       {/* Main Services Section */}
-      <section className="bg-white py-16 overflow-x-hidden">
+      <section id='services' className="bg-white py-16 overflow-x-hidden">
         <div className="container mx-auto px-4">
           {/* Header */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8">
